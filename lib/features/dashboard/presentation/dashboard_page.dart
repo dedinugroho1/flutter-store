@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import 'widgets/stat_card.dart';
+import 'widgets/recent_orders_table.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -33,20 +34,18 @@ class DashboardPage extends StatelessWidget {
             ),
             const SizedBox(height: 32),
 
-            // Kumpulan Kotak Statistik (Stat Cards) pakai GridView
-            // Supaya ukurannya otomatis menyesuaikan lebar layar
+            // Kumpulan Kotak Statistik (Stat Cards)
             LayoutBuilder(
               builder: (context, constraints) {
-                // Jika layarnya sempit (mobile/tablet), kolomnya dikurangi
                 int crossAxisCount = constraints.maxWidth > 1200 ? 4 : (constraints.maxWidth > 800 ? 2 : 1);
                 
                 return GridView.count(
                   crossAxisCount: crossAxisCount,
-                  shrinkWrap: true, // Wajib agar tidak error di dalam SingleChildScrollView
-                  physics: const NeverScrollableScrollPhysics(), // Scroll mengikuti induknya
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   crossAxisSpacing: 24,
                   mainAxisSpacing: 24,
-                  childAspectRatio: 2.0, // Diubah dari 2.2 menjadi 2.0 agar card lebih tinggi
+                  childAspectRatio: 2.0,
                   children: const [
                     StatCard(
                       title: 'Total Revenue',
@@ -84,6 +83,12 @@ class DashboardPage extends StatelessWidget {
                 );
               }
             ),
+            
+            const SizedBox(height: 32),
+            
+            // Komponen Tabel Pesanan Terbaru
+            const RecentOrdersTable(),
+            
           ],
         ),
       ),
