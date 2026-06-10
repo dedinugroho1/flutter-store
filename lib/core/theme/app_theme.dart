@@ -38,12 +38,12 @@ class AppTheme {
       ),
 
       // Styling untuk Card (biar lebih clean tanpa shadow berlebih)
-      cardTheme: CardTheme(
+      cardTheme: const CardThemeData(
         color: AppColors.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-          side: const BorderSide(color: AppColors.border),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+          side: BorderSide(color: AppColors.border),
         ),
       ),
 

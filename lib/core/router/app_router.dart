@@ -1,32 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../widgets/app_shell.dart';
 
-// Key ini berguna kalau kita butuh navigasi tanpa context nanti
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-// Ini adalah konfigurasi utama router kita
 final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/', // Halaman pertama yang dibuka
+  initialLocation: '/',
   routes: [
-    GoRoute(
-      path: '/',
-      name: 'dashboard',
-      // Untuk sementara, kita tampilkan teks biasa dulu sebagai placeholder
-      builder: (context, state) => const Scaffold(
-        body: Center(
-          child: Text('Halaman Dashboard (Sedang Dibuat...)'),
+    // ShellRoute adalah pembungkus (AppShell)
+    ShellRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (context, state, child) {
+        return AppShell(navigationShell: child);
+      },
+      routes: [
+        // Anak-anak dari ShellRoute (halaman-halaman di sebelah kanan)
+        GoRoute(
+          path: '/',
+          name: 'dashboard',
+          builder: (context, state) => const Scaffold(
+            body: Center(child: Text('Halaman Dashboard', style: TextStyle(fontSize: 24))),
+          ),
         ),
-      ),
-    ),
-    GoRoute(
-      path: '/products',
-      name: 'products',
-      builder: (context, state) => const Scaffold(
-        body: Center(
-          child: Text('Halaman Products (Sedang Dibuat...)'),
+        GoRoute(
+          path: '/products',
+          name: 'products',
+          builder: (context, state) => const Scaffold(
+            body: Center(child: Text('Halaman Products', style: TextStyle(fontSize: 24))),
+          ),
         ),
-      ),
+      ],
     ),
   ],
 );
