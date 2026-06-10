@@ -51,10 +51,10 @@ Project ini adalah web app dashboard untuk mengelola:
 
 | Step | Task | Status |
 |------|------|--------|
-| 3.1 | Buat stat cards (total products, customers, orders) | ⬜ |
-| 3.2 | Buat recent orders table | ⬜ |
-| 3.3 | Buat top products widget | ⬜ |
-| 3.4 | Layout dashboard responsive | ⬜ |
+| 3.1 | Buat stat cards (total products, customers, orders) | ✅ |
+| 3.2 | Buat recent orders table | ✅ |
+| 3.3 | Buat top products widget | ✅ |
+| 3.4 | Layout dashboard responsive | ✅ |
 
 ---
 
