@@ -37,11 +37,11 @@ Project ini adalah web app dashboard untuk mengelola:
 
 | Step | Task | Status |
 |------|------|--------|
-| 2.1 | Buat theme (warna, typography, spacing) | ⬜ |
-| 2.2 | Buat AppShell/Layout (sidebar + content area) | ⬜ |
-| 2.3 | Buat sidebar navigation | ⬜ |
-| 2.4 | Buat top bar / app bar | ⬜ |
-| 2.5 | Setup routing dengan go_router | ⬜ |
+| 2.1 | Buat theme (warna, typography, spacing) | ✅ |
+| 2.2 | Buat AppShell/Layout (sidebar + content area) | ✅ |
+| 2.3 | Buat sidebar navigation | ✅ |
+| 2.4 | Buat top bar / app bar | ✅ |
+| 2.5 | Setup routing dengan go_router | ✅ |
 | 2.6 | Responsive layout (desktop, tablet, mobile) | ⬜ |
 
 ---

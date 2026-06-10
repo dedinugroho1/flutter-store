@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../widgets/app_shell.dart';
+import '../../features/dashboard/presentation/dashboard_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -20,9 +21,7 @@ final GoRouter appRouter = GoRouter(
         GoRoute(
           path: '/',
           name: 'dashboard',
-          builder: (context, state) => const Scaffold(
-            body: Center(child: Text('Halaman Dashboard', style: TextStyle(fontSize: 24))),
-          ),
+          builder: (context, state) => const DashboardPage(),
         ),
         GoRoute(
           path: '/products',
