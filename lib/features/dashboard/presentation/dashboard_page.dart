@@ -46,7 +46,7 @@ class DashboardPage extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(), // Scroll mengikuti induknya
                   crossAxisSpacing: 24,
                   mainAxisSpacing: 24,
-                  childAspectRatio: 2.2, // Mengatur rasio lebar:tinggi card
+                  childAspectRatio: 2.0, // Diubah dari 2.2 menjadi 2.0 agar card lebih tinggi
                   children: const [
                     StatCard(
                       title: 'Total Revenue',
