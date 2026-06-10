@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart'; // Import ini
 import 'core/theme/app_theme.dart';
 import 'core/router/app_router.dart';
 
 void main() {
+  usePathUrlStrategy(); // Tambahkan baris ini untuk menghilangkan #
   runApp(const FlutterStoreApp());
 }
 
